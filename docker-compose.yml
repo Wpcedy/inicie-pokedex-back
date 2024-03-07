@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: willian
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: pokedex-back
+    container_name: pokedex-back-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www/
+    networks:
+      - pokedex-back
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: pokedex-back-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - pokedex-back
+
+networks:
+  pokedex-back:
+    driver: bridge
