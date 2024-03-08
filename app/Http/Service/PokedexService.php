@@ -10,6 +10,10 @@ class PokedexService
     {
         $return = [];
         $response = Http::get('https://pokeapi.co/api/v2/pokemon');
+        $return['total'] = $response['count'];
+        $return['proximo'] = $response['next'];
+        $return['anterior'] = $response['previous'];
+        $return['pokemon'] = [];
 
         foreach ($response['results'] as $pokemon) {
             $tipos = [];
@@ -28,7 +32,7 @@ class PokedexService
                 ]);
             }
 
-            array_push($return, [
+            array_push($return['pokemon'], [
                 'imagem' => $pokemonInfo['sprites']['other']['official-artwork']['front_default'],
                 'nome' => $pokemonInfo['name'],
                 'numero' => $pokemonInfo['id'],
