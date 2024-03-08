@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PingController;
+use App\Http\Controllers\PokemonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use App\Http\Controllers\PingController;
 */
 
 Route::get('/ping', [PingController::class, 'index']);
+Route::get('/pokemon', [PokemonController::class, 'index']);
