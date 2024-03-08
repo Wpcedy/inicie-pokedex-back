@@ -36,7 +36,7 @@ class PokedexService
                 'imagem' => $pokemonInfo['sprites']['other']['official-artwork']['front_default'],
                 'nome' => $pokemonInfo['name'],
                 'numero' => $pokemonInfo['id'],
-                'tipo' => $tipos,
+                'tipos' => $tipos,
                 'altura' => ($pokemonInfo['height'] . 0.1),
                 'peso' => ($pokemonInfo['weight'] . 0.1),
                 'status' => $status
