@@ -24,7 +24,10 @@ http://localhost:8000/ping
 
 Rotas
 - GET /ping
-- GET /pokemon{?pokemon=nome}
+- GET /pokemon{?pokemon=nome&url=link}
+
+pokemon - nome do pokemon;
+url - link fornecido pelo sistema para os próximos pokemon da lista;
 
 ## Exemplo de retorno
 
