@@ -24,7 +24,7 @@ http://localhost:8000/ping
 
 Rotas
 - GET /ping
-- GET /pokemon
+- GET /pokemon{?pokemon=nome}
 
 ## Exemplo de retorno
 
