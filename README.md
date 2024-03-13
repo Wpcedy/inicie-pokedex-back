@@ -75,3 +75,9 @@ url - link fornecido pelo sistema para os próximos pokemon da lista;
     ]
 }
 ```
+
+## Testes
+
+```sh
+php artisan test
+```
